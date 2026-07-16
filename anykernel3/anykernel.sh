@@ -37,4 +37,7 @@ ui_print "*******************************************"
 
 patch_cmdline androidboot.selinux androidboot.selinux=permissive
 
+# Inject Cinnamon init configurations into the main ramdisk structure
+insert_line init.rc "import /init.cinnamon.rc" before "import /init.usb.rc"
+
 write_boot;
